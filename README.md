@@ -1,4 +1,7 @@
 # Age Verification Popup for Squarespace Sites
+[![age-verification-widget.png](https://i.postimg.cc/zfxpytDD/age-verification-widget.png)](https://postimg.cc/XZy9hgyt)
+## Demo
+View a live example of the [age verification widget](https://www.hoptimisticbrews.com/).
 
 ## Installation
 1. Log into Squarespace. 
@@ -28,3 +31,6 @@ Each time a user clicks "Yes" on the popup, a cookie is stored on their device. 
 ```
 date.setTime(date.getTime() + (days*24*60*60*1000));
 ```
+
+---
+Age Verification Popup Widget for Squarespace created by ⚡ [Little Thunder](https://littlethunder.co)  
