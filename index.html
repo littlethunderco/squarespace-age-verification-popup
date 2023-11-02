@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  #age-verification-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+  }
+  #age-verification-popup .content {
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #age-verification-popup .content h3 {
+    margin-bottom: 20px;
+  }
+  #age-verification-popup .content p {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  #age-verification-popup .content button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #232323;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  #age-verification-popup small {
+    font-size: 10px;
+    text-align: center;
+    padding-top: 30px;
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="age-verification-popup" style="display:none;">
+  <div class="content">
+    <h3>Are you over 18?</h3>
+    <p>Please confirm you are over the UK legal drinking age of 18 to continue.</p>
+    <button class="yes" onclick="verifyAge(true)">Yes</button>
+    <button class="no" onclick="verifyAge(false)">No</button>
+    <small>Age Verification Widget by ⚡ <a href="https://littlethunder.co">Little Thunder</a></small>
+  </div>
+  
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    var ageVerified = getCookie('ageVerified');
+    if(ageVerified !== 'true') {
+      document.getElementById('age-verification-popup').style.display = 'flex';
+    }
+  });
+
+  function verifyAge(isOver18) {
+    if (isOver18) {
+      setCookie('ageVerified', 'true', 1);
+      document.getElementById('age-verification-popup').style.display = 'none';
+    } else {
+      window.location.href = 'https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/buying-alcohol#under18s';
+    }
+  }
+
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+</script>
+</body>
+</html>
