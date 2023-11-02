@@ -1,5 +1,5 @@
 # Age Verification Popup for Squarespace Sites
-[![age-verification-widget.png](https://i.postimg.cc/zfxpytDD/age-verification-widget.png)](https://postimg.cc/XZy9hgyt)
+[![age-verification-widget.png](https://i.postimg.cc/zfxpytDD/age-verification-widget.png)](https://www.hoptimisticbrews.com/)
 ## Demo
 View a live example of the [age verification widget](https://www.hoptimisticbrews.com/).
 
