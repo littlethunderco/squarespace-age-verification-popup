@@ -19,7 +19,7 @@ Change the text within the tags on lines `59` and `60` to your desired message f
 ```
 
 ### 2. URL when No is Pressed
-On Line `81` you can configure the destination when the "No" button is pressed. By default, it directs users to the Drink Aware website. To amend this, simply replace the URL with your preferred destination.
+On Line `81` you can configure the destination when the "No" button is pressed. By default, it directs users to the Drink Aware website. To amend this, simply replace the URL between the single quotes with your preferred destination.
 
 ```
 window.location.href = 'https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/buying-alcohol#under18s';
